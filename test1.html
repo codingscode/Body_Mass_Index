@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+
+        <style>
+
+        </style>
+    </head>
+
+    <body>
+        <div>
+            <h1>Body Mass Index</h1>
+            <h2>Your mass in Kg:</h2>
+            <input type="number" id="mass">
+            <h2>Your height in m:</h2>
+            <input type="number" id="height"> <br>
+            <button id="calculateFunc" onclick="calculateFunc()">Calculate</button>
+            <div id="answer">
+                <div>2</div>
+                <div>3</div>
+            </div>
+        </div>
+
+        <script>
+             function calculateFunc() {
+                 var mymass = document.getElementById('mass').value
+                 var myheight = document.getElementById('height').value
+
+                 //var answer = document.getElementById('answer').innerHTML
+                 var answer = document.getElementById('answer')//.NamedNodeMap()
+                 var childanswer = answer.childNodes[1].textContent //.firstChild
+                 var child2answer = answer.childNodes[3].textContent  //.firstChild
+                 //var childchild = childanswer.firstChild
+
+                 var calc = mymass/(myheight)**2
+
+                 console.log('mymass', mymass)
+                 console.log('answer.attributes', answer.attributes)
+                 console.log('childanswer', childanswer, typeof childanswer)
+                 console.log(childanswer)
+                 console.log('child2answer', child2answer, typeof child2answer)
+                 console.log('sum test', parseFloat(childanswer) + parseFloat(child2answer))
+
+             }
+        </script>
+
+    </body>
+</html>
