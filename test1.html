@@ -35,7 +35,39 @@
                  var child2answer = answer.childNodes[3].textContent  //.firstChild
                  //var childchild = childanswer.firstChild
 
+ 
                  var calc = mymass/(myheight)**2
+
+                 answer.childNodes[1].textContent = Number(calc)
+
+                 let conclusion 
+                 
+                 if (calc < 25 && calc >= 18.50) {
+                     conclusion = 'peso normal'
+                 }
+                 else if (calc <= 29.99 && calc >= 25) {
+                     conclusion = 'sobrepeso'
+                 }
+                 else if (calc < 35 && calc >= 30) {
+                     conclusion = 'obesidade grau I'
+                 }
+                 else if (calc <= 40 && calc >= 35) {
+                     conclusion = 'obesidade grau II'
+                 }
+                 else if (calc > 40) {
+                     conclusion = 'obesidade grau III (obesidade morbida)'
+                 }
+                 else if (calc <= 18.49 && calc >= 17) {
+                     conclusion = 'baixo peso'
+                 }
+                 else if (calc < 17 && calc >= 16) {
+                     conclusion = 'baixo peso grave'
+                 }
+                 else {
+                     conclusion = 'baixo peso muito grave'
+                 }
+
+                 answer.childNodes[3].textContent = conclusion
 
                  console.log('mymass', mymass)
                  console.log('answer.attributes', answer.attributes)
@@ -43,6 +75,7 @@
                  console.log(childanswer)
                  console.log('child2answer', child2answer, typeof child2answer)
                  console.log('sum test', parseFloat(childanswer) + parseFloat(child2answer))
+                 console.log('calc', typeof calc)
 
              }
         </script>
